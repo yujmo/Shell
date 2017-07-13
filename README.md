@@ -1,2 +1,1 @@
-# learnShell
-学习Shell脚本
+    Shell脚本的一些用于参考的案例 
