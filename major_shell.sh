@@ -11,3 +11,9 @@ tee /etc/docker/daemon.json <<-'EOF'
   "registry-mirrors": ["https://ld7jqf2j.mirror.aliyuncs.com"]
 }
 EOF
+
+head -c 16 /dev/urandom | od -An -t x | tr -d ' '
+
+IP=`arp-scan 192.168.0.0/24 |grep 08:00:27:42:93:94|awk '{ print $1 }'`
+
+sshpass -p ****** ssh-copy-id -i /root/.ssh/id_rsa.pub -o StrictHostKeyChecking=no $i
