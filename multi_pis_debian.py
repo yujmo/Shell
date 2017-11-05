@@ -10,6 +10,9 @@ nets=`ifconfig wlan0|grep mask|awk '{print $6}'|awk -F '.' 'BEGIN{OFS="."} END{p
 #利用ARP协议对网段内主机进行扫描，找出符合条件的主机
 sudo arp-scan $nets/24 |grep Raspberry | awk '{print $2,$1}' > /home/pi/cache_hosts
 
+#更改文件权限
+sudo chmod 777 /etc/ansible/hosts
+
 #使用python改写/etc/ansible/hosts文件
 python /home/pi/rewrite_ansible_hosts.py
 
