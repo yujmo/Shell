@@ -11,7 +11,7 @@ case $os_name in
         ;;
 esac
 
-directory=`ls -F |grep '/$'`
+#directory=`ls -F |grep '/$'`
 #echo $directory
 #for i in $directory
 #       do
